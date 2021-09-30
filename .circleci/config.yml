@@ -43,7 +43,24 @@ jobs:
     steps:
       - slack/notify:
           channel: C02GZ9N4WHE 
-          custom: "This is a test of the Slack Integration Bot" 
+          custom: |
+          - slack/notify:
+    event: always
+    custom: |
+      {
+        "blocks": [
+          {
+            "type": "section",
+            "fields": [
+              {
+                "type": "plain_text",
+                "text": "*This is a test of the Slack Bot*",
+                "emoji": true
+              }
+            ]
+          }
+        ]
+      }
 
 workflows:
   version: 2
