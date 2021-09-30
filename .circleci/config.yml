@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  slack: circleci/slack@4.4.4
 jobs:
   one:
     docker:
@@ -42,6 +44,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - slack/notify:
+          channel: C02GZ9N4WHE 
           custom: |
             {
               "blocks": [
@@ -60,7 +63,7 @@ jobs:
           event: always
 
 workflows:
-  version: 2
+  version: 2.1
   one_and_two:
     jobs:
       - one
