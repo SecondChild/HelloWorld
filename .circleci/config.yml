@@ -42,7 +42,7 @@ jobs:
       - image: cimg/base:stable
     steps:
          - slack/notify:
-          custom: |
+           custom: |
             {
               "blocks": [
                 {
