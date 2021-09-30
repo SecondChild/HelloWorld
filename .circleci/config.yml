@@ -42,23 +42,22 @@ jobs:
       - image: cimg/base:stable
     steps:
       - slack/notify:
-          channel: C02GZ9N4WHE 
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
           event: always
-    custom: 
-      {
-        "blocks": [
-          {
-            "type": "section",
-            "fields": [
-              {
-                "type": "plain_text",
-                "text": "*This is a test of the Slack Bot*",
-                "emoji": true
-              }
-            ]
-          }
-        ]
-      }
 
 workflows:
   version: 2
