@@ -71,5 +71,6 @@ workflows:
           requires:
             - one
       - three:
+          context: Slack-Bot-Token
           requires:
             - two
