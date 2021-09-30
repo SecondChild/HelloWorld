@@ -46,7 +46,7 @@ jobs:
           custom: |
           - slack/notify:
     event: always
-    custom: |
+    custom: 
       {
         "blocks": [
           {
